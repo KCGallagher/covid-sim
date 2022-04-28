@@ -1,0 +1,2 @@
+Run  `./run_sample.py Luxembourg` from `covid-sim/data`
+Run  ` Rscript Rscripts/PlotRuns.R data/` from `covid-sim`
