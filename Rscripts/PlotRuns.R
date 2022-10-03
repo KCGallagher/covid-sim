@@ -269,10 +269,11 @@ for (SubFolder in VariousSubFolders)
 				LWD <- 4
 				png(file = file.path(ScenarioPlotDir,
 								paste0("WeeklyIncidence", CaseOrDeath_long, "byAgeGroup.png")),
-						res = PNG_res, units = "in", width = 10, height = 10)
+						width = 10, height = 10 ,res = PNG_res, units = "in")
 				barplot(t(WeeklyInc), col = rev(bpy.colors(9)), #xaxt = "n",
-						las = 2, main = paste0(Scenario, "\nWeekly ", CaseOrDeath_long, " by age"))
-				legend("topright", legend = colnames(CumCases_10yBands), col = rev(bpy.colors(9)), lty = NA, pch = 15, lwd = LWD, cex = 1)
+						las = 2, #main = paste0(Scenario, "\nWeekly ", CaseOrDeath_long, " by age"),
+						cex.lab=1.5, cex.axis=1.5, cex.main=1.5, cex.sub=1.5, cex.names=1.5)
+				legend("topright", legend = colnames(CumCases_10yBands), col = rev(bpy.colors(9)), lty = NA, pch = 15, lwd = LWD, cex = 1.5)
 				dev.off()
 			}
 		}
@@ -330,7 +331,7 @@ for (SubFolder in VariousSubFolders)
 					maxYaxis 			= max(AdUnitResults_tmp)
 
 					pngFileName = paste0(ScenarioPlotDir, "AdUnits_",
-							InfVariableStringLong, "_", IncPrevOrCumIncString, "_", MinAdUnit, "_", MaxAdUnit,  ".png")
+							InfVariableStringLong, "_", IncPrevOrCumIncString, "_", MinAdUnit, "_", MaxAdUnit,  ".pdf")
 
 					if (any(AdUnitResults_tmp > 0)) ### don't make empty plots
 					{
